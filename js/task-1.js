@@ -1,4 +1,4 @@
-let getUserNames = (users) => users.map(user => user.name);
+const getUserNames = (users) => users.map(user => user.name);
 
 
 // Задача 1. Імена користувачів
