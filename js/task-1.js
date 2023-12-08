@@ -1,48 +1,57 @@
-function isEnoughCapacity(products, containerSize) {
-
-    // створюю змінну для зберігання кількості продуктів
-    let numberOfProducts = 0;
-
-    // записую значення властивостей об'єкта у змінну (масив кількостей кожного продукту)
-    const arrOfProducts = Object.values(products);
-
-    // через цикл for of перебираю масив кількостей продуктів та додаю до змінної
-    for (const product of arrOfProducts) {
-        numberOfProducts += product;
-    }
-
-    // порівнюю кількість продуктів та повертаю відповідне значення
-    return numberOfProducts <= containerSize;
-}
+let getUserNames = (users) => users.map(user => user.name);
 
 
+// Задача 1. Імена користувачів
+// ВИКОНУЙ ЦЕ ЗАВДАННЯ У ФАЙЛІ task-1.js
+// Напиши стрілочну функцію getUserNames(users), яка прийматиме один параметр users — масив об’єктів користувачів. Функція має повертати масив імен усіх користувачів (властивість name) із масиву users.
 
-// перевірка
-console.log(
-isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8)
-); // true
+// Візьми код нижче і встав після оголошення своєї функції для перевірки коректності її роботи. У консоль будуть виведені результати її викликів.
 
 console.log(
-isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12)
-); // false
+getUserNames([
+{
+name: "Moore Hensley",
+email: "moorehensley@indexia.com",
+balance: 2811
+},
+{
+name: "Sharlene Bush",
+email: "sharlenebush@tubesys.com",
+balance: 3821
+},
+{
+name: "Ross Vazquez",
+email: "rossvazquez@xinware.com",
+balance: 3793
+},
+{
+name: "Elma Head",
+email: "elmahead@omatom.com",
+balance: 2278
+},
+{
+name: "Carey Barr",
+email: "careybarr@nurali.com",
+balance: 3951
+},
+{
+name: "Blackburn Dotson",
+email: "blackburndotson@furnigeer.com",
+balance: 1498
+},
+{
+name: "Sheree Anthony",
+email: "shereeanthony@kog.com",
+balance: 2764
+},
+])
+); // ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
 
-console.log(
-isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14)
-); // true
-
-console.log(
-isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7)
-); // false
+// Залиш цей код для перевірки ментором.
 
 // На що буде звертати увагу ментор при перевірці:
-// Оголошена функція isEnoughCapacity(products, containerSize)
-// Виклик isEnoughCapacity({ apples: 2, grapes: 3, carrots: 1 }, 8) повертає true
-// Виклик isEnoughCapacity({ apples: 4, grapes: 6, lime: 16 }, 12) повертає false
-// Виклик isEnoughCapacity({ apples: 1, lime: 5, tomatoes: 3 }, 14) повертає true
-// Виклик isEnoughCapacity({ apples: 18, potatoes: 5, oranges: 2 }, 7) повертає false
-
-// Функція оголошує два параметри:
-// products — об’єкт, у якому ключі містять назви товарів, а їхні значення — кількість цих товарів. Наприклад, { apples: 2, grapes: 4 }.
-// containerSize — число, максимальна кількість одиниць товарів, яку в себе може вмістити контейнер.
-// Функція має повернути результат перевірки, чи помістяться всі товари в контейнер.Тобто порахувати загальну кількість товарів в об’єкті products і повернути true,
-// якщо вона менше або дорівнює containerSize, і false, якщо ні.
+// Оголошена змінна getUserNames
+// Змінній getUserNames присвоєна стрілочна функція з параметром (users).
+// Для перебирання параметра users використовується метод map()
+// Виклик функції із зазначеним масивом користувачів повертає масив ["Moore Hensley", "Sharlene Bush", "Ross Vazquez", "Elma Head", "Carey Barr", "Blackburn Dotson", "Sheree Anthony"]
+// Виклик функції з випадковими, але валідними аргументами повертає правильне значення
